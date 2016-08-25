@@ -20,8 +20,8 @@ $(document).ready( //#A
     $.getJSON('http://devices.webofthings.io/pi/sensors/temperature', //#B
       function (data) { //#C
         console.log(data);
-        $('#temp').html(data.value + ' ' + data.unit); //#D
-        setTimeout(doPoll, 5000); //#E
+        $('#temp').html(data.value + ' ' + data.unit + " Last Polled: " + new Date()); //#D
+        setTimeout(doPoll, 100); //#E
     });
   });
 //#A Wait until the page is loaded and then call doPoll()
